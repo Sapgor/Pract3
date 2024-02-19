@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int rows = 3;
+    const int cols = 5;
+    double arr[rows][cols];
+
+    // Ввод элементов массива с клавиатуры
+    cout << "Введите элементы массива:" << endl;
+    for (int i = 0; i < rows; i++) {
+        cout << "Строка " << i + 1 << ":" << endl;
+        for (int j = 0; j < cols; j++) {
+            cout << "arr[" << i << "][" << j << "]: ";
+            cin >> arr[i][j];
+        }
+    }
+
+    // Вычисление и вывод среднего арифметического для каждой строки
+    cout << "Средние арифметические для каждой строки:" << endl;
+    for (int i = 0; i < rows; i++) {
+        double sum = 0;
+        for (int j = 0; j < cols; j++) {
+            sum += arr[i][j];
+        }
+        double average = sum / cols;
+        cout << "Строка " << i + 1 << ": " << average << endl;
+    }
+
+    return 0;
+}
